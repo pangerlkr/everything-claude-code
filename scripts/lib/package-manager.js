@@ -369,31 +369,31 @@ function escapeRegex(str) {
  */
 function getCommandPattern(action) {
   // Trim action to handle leading/trailing spaces
-  action = action.trim();
+  const trimmedAction = action.trim();
   const patterns = [];
 
-  if (action === 'dev') {
+  if (trimmedAction === 'dev') {
     patterns.push(
       'npm run dev',
       'pnpm( run)? dev',
       'yarn dev',
       'bun run dev'
     );
-  } else if (action === 'install') {
+  } else if (trimmedAction === 'install') {
     patterns.push(
       'npm install',
       'pnpm install',
       'yarn( install)?',
       'bun install'
     );
-  } else if (action === 'test') {
+  } else if (trimmedAction === 'test') {
     patterns.push(
       'npm test',
       'pnpm test',
       'yarn test',
       'bun test'
     );
-  } else if (action === 'build') {
+  } else if (trimmedAction === 'build') {
     patterns.push(
       'npm run build',
       'pnpm( run)? build',
@@ -402,7 +402,7 @@ function getCommandPattern(action) {
     );
   } else {
     // Generic run command — escape regex metacharacters in action
-    const escaped = escapeRegex(action);
+    const escaped = escapeRegex(trimmedAction);
     patterns.push(
       `npm run ${escaped}`,
       `pnpm( run)? ${escaped}`,
