@@ -1130,10 +1130,12 @@ function runTests() {
   else failed++;
 
   if (test('accepts empty string action', () => {
-    assert.doesNotThrow(
-      () => pm.getCommandPattern(''),
-      'Should accept empty string (edge case, but valid string)'
-    );
+    // Empty string is a valid edge case - should generate generic pattern
+    const pattern = pm.getCommandPattern('');
+    assert.ok(typeof pattern === 'string', 'Should return a string');
+    assert.ok(pattern.length > 0, 'Should return non-empty pattern');
+    // Pattern should be valid regex
+    assert.doesNotThrow(() => new RegExp(pattern), 'Should produce valid regex');
   })) passed++;
   else failed++;
 
