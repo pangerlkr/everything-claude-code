@@ -368,6 +368,8 @@ function escapeRegex(str) {
  * @param {string} action - Action pattern (e.g., "run dev", "install", "test")
  */
 function getCommandPattern(action) {
+  // Trim action to handle leading/trailing spaces
+  action = action.trim();
   const patterns = [];
 
   if (action === 'dev') {
