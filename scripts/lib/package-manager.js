@@ -365,9 +365,12 @@ function escapeRegex(str) {
 
 /**
  * Generate a regex pattern that matches commands for all package managers
- * @param {string} action - Action pattern (e.g., "run dev", "install", "test")
+ * @param {string} action - Script or action name (e.g., "dev", "install", "test", "build")
  */
 function getCommandPattern(action) {
+  if (typeof action !== 'string') {
+    throw new Error('[PackageManager] getCommandPattern: "action" must be a string');
+  }
   // Trim action to handle leading/trailing spaces
   const trimmedAction = action.trim();
   const patterns = [];
