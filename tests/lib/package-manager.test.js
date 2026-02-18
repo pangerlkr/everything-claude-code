@@ -1090,6 +1090,53 @@ function runTests() {
   })) passed++;
   else failed++;
 
+  // ── Round 30: getCommandPattern type validation ──
+  console.log('\nRound 30: getCommandPattern type validation:');
+
+  if (test('throws descriptive error for undefined action', () => {
+    assert.throws(
+      () => pm.getCommandPattern(undefined),
+      { message: '[PackageManager] getCommandPattern: "action" must be a string' },
+      'Should throw descriptive error for undefined'
+    );
+  })) passed++;
+  else failed++;
+
+  if (test('throws descriptive error for null action', () => {
+    assert.throws(
+      () => pm.getCommandPattern(null),
+      { message: '[PackageManager] getCommandPattern: "action" must be a string' },
+      'Should throw descriptive error for null'
+    );
+  })) passed++;
+  else failed++;
+
+  if (test('throws descriptive error for number action', () => {
+    assert.throws(
+      () => pm.getCommandPattern(123),
+      { message: '[PackageManager] getCommandPattern: "action" must be a string' },
+      'Should throw descriptive error for number'
+    );
+  })) passed++;
+  else failed++;
+
+  if (test('throws descriptive error for object action', () => {
+    assert.throws(
+      () => pm.getCommandPattern({}),
+      { message: '[PackageManager] getCommandPattern: "action" must be a string' },
+      'Should throw descriptive error for object'
+    );
+  })) passed++;
+  else failed++;
+
+  if (test('accepts empty string action', () => {
+    assert.doesNotThrow(
+      () => pm.getCommandPattern(''),
+      'Should accept empty string (edge case, but valid string)'
+    );
+  })) passed++;
+  else failed++;
+
   // ── Round 31: setProjectPackageManager write verification ──
   console.log('\nsetProjectPackageManager (write verification, Round 31):');
 
