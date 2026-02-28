@@ -1,0 +1,656 @@
+# Instincts generated from https://github.com/pangerlkr/everything-claude-code
+# Generated: 2026-02-28T01:40:14.769Z
+# Version: 2.0
+
+---
+id: everything-claude-code-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Commit Length
+
+## Action
+
+Write moderate-length commit messages (~50 characters)
+
+## Evidence
+
+- Average commit message length: 72 chars
+- Based on 200 commits
+
+---
+id: everything-claude-code-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: everything-claude-code-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: everything-claude-code-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: everything-claude-code-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Test Framework
+
+## Action
+
+Use unknown as the test framework
+
+## Evidence
+
+- Test framework detected: unknown
+- File pattern: *.test.js
+
+---
+id: everything-claude-code-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.js
+
+## Evidence
+
+- File pattern: *.test.js
+- Consistent across test files
+
+---
+id: everything-claude-code-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: yes
+
+---
+id: everything-claude-code-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: migrations/*
+
+---
+id: everything-claude-code-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~17x per month
+- Files: scripts/codemaps/*, .opencode/*, .opencode/plugins/*
+
+---
+id: everything-claude-code-workflow-add-new-skill
+trigger: "when doing add new skill"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Workflow Add New Skill
+
+## Action
+
+Follow the add-new-skill workflow:
+1. Create main skill file in skills/{name}/SKILL.md
+2. Add corresponding skill file in .agents/skills/{name}/SKILL.md
+3. Add OpenAI agent config in .agents/skills/{name}/agents/openai.yaml
+4. Add skill file in .cursor/skills/{name}/SKILL.md
+5. Update .codex/AGENTS.md
+6. Update .opencode/README.md
+7. Update main README.md skill listing and count
+8. Update skills/configure-ecc/SKILL.md
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: skills/{name}/SKILL.md, .agents/skills/{name}/SKILL.md, .agents/skills/{name}/agents/openai.yaml
+
+---
+id: everything-claude-code-workflow-version-release
+trigger: "when doing version release"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Workflow Version Release
+
+## Action
+
+Follow the version-release workflow:
+1. Update version in package.json
+2. Update version in .opencode/package.json
+3. Update version in .claude-plugin/plugin.json
+4. Update version in .claude-plugin/marketplace.json
+5. Update README.md with new stats/features
+6. Run scripts/release.sh
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: package.json, .opencode/package.json, .claude-plugin/plugin.json
+
+---
+id: everything-claude-code-workflow-cross-platform-skill-sync
+trigger: "when doing cross platform skill sync"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Workflow Cross Platform Skill Sync
+
+## Action
+
+Follow the cross-platform-skill-sync workflow:
+1. Update base skill in skills/ directory
+2. Sync to .agents/skills/ with openai.yaml config
+3. Sync to .cursor/skills/ for Cursor compatibility
+4. Update .codex/AGENTS.md for Codex
+5. Update .opencode/ configurations
+6. Update main README.md
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: skills/{name}/SKILL.md, .agents/skills/{name}/SKILL.md, .agents/skills/{name}/agents/openai.yaml
+
+---
+id: everything-claude-code-workflow-documentation-localization
+trigger: "when doing documentation localization"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Workflow Documentation Localization
+
+## Action
+
+Follow the documentation-localization workflow:
+1. Update main README.md
+2. Update README.zh-CN.md for Chinese
+3. Update docs/zh-CN/README.md
+4. Update docs/zh-TW/README.md for Traditional Chinese
+5. Update docs/ja-JP/README.md for Japanese
+6. Update corresponding skill files in each locale
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: README.md, README.zh-CN.md, docs/zh-CN/README.md
+
+---
+id: everything-claude-code-workflow-add-programming-language-rules
+trigger: "when doing add programming language rules"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Workflow Add Programming Language Rules
+
+## Action
+
+Follow the add-programming-language-rules workflow:
+1. Create rules/{lang}/coding-style.md
+2. Create rules/{lang}/hooks.md
+3. Create rules/{lang}/patterns.md
+4. Create rules/{lang}/security.md
+5. Create rules/{lang}/testing.md
+6. Create corresponding .cursor/rules/{lang}-*.md files
+7. Update rules/README.md
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: rules/{lang}/coding-style.md, rules/{lang}/hooks.md, rules/{lang}/patterns.md
+
+---
+id: everything-claude-code-workflow-hooks-and-scripts-update
+trigger: "when doing hooks and scripts update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Workflow Hooks And Scripts Update
+
+## Action
+
+Follow the hooks-and-scripts-update workflow:
+1. Update hooks/hooks.json configuration
+2. Add or modify scripts in scripts/hooks/
+3. Update .cursor/hooks.json if applicable
+4. Update hooks/README.md documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: hooks/hooks.json, scripts/hooks/{name}.js, .cursor/hooks.json
+
+---
+id: everything-claude-code-camelcase-files
+trigger: "When creating new files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Camelcase Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- File naming pattern observed in skills/
+- Consistent camelCase in config files
+
+---
+id: everything-claude-code-conventional-commits
+trigger: "When making a commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Conventional Commits
+
+## Action
+
+Use conventional commit format with prefix (feat:, fix:, chore:, docs:)
+
+## Evidence
+
+- feat: add generic content and investor skills
+- fix: restructure plugin manifest
+- chore: release v1.7.0
+
+---
+id: everything-claude-code-skill-multiplatform
+trigger: "When adding a new skill"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Skill Multiplatform
+
+## Action
+
+Create skill files in skills/, .agents/skills/, and .cursor/skills/ directories
+
+## Evidence
+
+- add-new-skill workflow occurs ~10x/month
+- Consistent pattern across skills/{name}/SKILL.md structure
+
+---
+id: everything-claude-code-openai-yaml-config
+trigger: "When adding skill to .agents/ directory"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Openai Yaml Config
+
+## Action
+
+Include corresponding openai.yaml agent configuration
+
+## Evidence
+
+- .agents/skills/{name}/agents/openai.yaml pattern
+- Part of add-new-skill workflow
+
+---
+id: everything-claude-code-readme-skill-count
+trigger: "When adding or removing skills"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Readme Skill Count
+
+## Action
+
+Update skill count in README.md and maintain skill directory listing
+
+## Evidence
+
+- fix(readme): correct skill count to 48
+- README.md updates in add-new-skill workflow
+
+---
+id: everything-claude-code-version-sync-manifests
+trigger: "When releasing new version"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Version Sync Manifests
+
+## Action
+
+Update version across package.json, .opencode/package.json, and plugin manifests
+
+## Evidence
+
+- version-release workflow pattern
+- Multiple manifest files require sync
+
+---
+id: everything-claude-code-skill-md-format
+trigger: "When creating skill documentation"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Skill Md Format
+
+## Action
+
+Use SKILL.md filename and standardized markdown format
+
+## Evidence
+
+- Consistent skills/{name}/SKILL.md pattern
+- All skill files follow SKILL.md naming
+
+---
+id: everything-claude-code-cross-platform-sync
+trigger: "When updating existing skills"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Cross Platform Sync
+
+## Action
+
+Propagate changes across .agents/, .cursor/, and .codex/ directories
+
+## Evidence
+
+- cross-platform-skill-sync workflow ~8x/month
+- Multiple platform directories require sync
+
+---
+id: everything-claude-code-localization-cascade
+trigger: "When updating main documentation"
+confidence: 0.82
+domain: workflow
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Localization Cascade
+
+## Action
+
+Update corresponding files in zh-CN, zh-TW, and ja-JP locale directories
+
+## Evidence
+
+- documentation-localization workflow
+- Multiple README files in different languages
+
+---
+id: everything-claude-code-language-rules-comprehensive
+trigger: "When adding new programming language support"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Language Rules Comprehensive
+
+## Action
+
+Create complete rule set including coding-style, hooks, patterns, security, and testing files
+
+## Evidence
+
+- add-programming-language-rules workflow
+- Consistent rules/{lang}/ structure
+
+---
+id: everything-claude-code-hooks-json-sync
+trigger: "When updating hook configurations"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Hooks Json Sync
+
+## Action
+
+Sync changes between hooks/hooks.json and .cursor/hooks.json
+
+## Evidence
+
+- hooks-and-scripts-update workflow
+- Dual hooks.json files require synchronization
+
+---
+id: everything-claude-code-configure-ecc-update
+trigger: "When adding new skills"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Configure Ecc Update
+
+## Action
+
+Update skills/configure-ecc/SKILL.md as part of skill addition process
+
+## Evidence
+
+- configure-ecc update in add-new-skill workflow
+- Part of skill addition pattern
+
+---
+id: everything-claude-code-mixed-import-export
+trigger: "When writing JavaScript modules"
+confidence: 0.6
+domain: code-style
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Mixed Import Export
+
+## Action
+
+Use mixed import/export styles as appropriate for context
+
+## Evidence
+
+- Mixed import/export style observed
+- JavaScript language detected
+
+---
+id: everything-claude-code-test-pattern-separate
+trigger: "When creating tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Test Pattern Separate
+
+## Action
+
+Place test files separately from source using *.test.js pattern
+
+## Evidence
+
+- Test location: separate
+- *.test.js file pattern identified
+
+---
+id: everything-claude-code-try-catch-errors
+trigger: "When handling errors in JavaScript"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: pangerlkr/everything-claude-code
+---
+
+# Everything Claude Code Try Catch Errors
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- Error handling style: try-catch
+- JavaScript codebase pattern
+
